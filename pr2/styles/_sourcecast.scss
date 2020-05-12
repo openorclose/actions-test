@@ -1,0 +1,77 @@
+.Sourcecast {
+  height: 100%;
+  display: flex;
+  background-color: $cadet-color-1;
+  flex-direction: column;
+  flex: 1 1 100%;
+}
+
+.Bar {
+  width: 95%;
+  margin: 0 auto;
+}
+
+.PlayerControl {
+  align-items: center;
+  float: left;
+  justify-content: flex-start;
+  margin: 0 auto;
+  width: 5%;
+}
+
+.Slider {
+  align-items: center;
+  float: right;
+  justify-self: flex-end;
+  margin: 0 auto;
+  width: 92%;
+}
+
+.SourcecastTable {
+  /* To show the table borders that get cut out by a Card  */
+  padding: 1px;
+
+  .ag-header-cell-label {
+    float: none !important;
+    width: auto !important;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .ag-header-cell-menu-button {
+    position: absolute;
+    float: none;
+  }
+
+  /** 
+   *  To prevent misalignment of column header and content 
+   *  for large displays. This effectively flushes the content left.
+   *  See https://github.com/source-academy/cadet-frontend/pull/148
+   */
+  .ag-body-container {
+    display: block;
+    /* Override ag-grid style to suppress unnecessary vertical scrollbar (bugfix) */
+    margin-bottom: 0;
+  }
+
+  .#{$ns}-icon {
+    /* Vertically centre appearance of blueprintjs icons in ag-grid */
+    margin-top: 6px;
+  }
+
+  .ag-paging-panel {
+    border-top: none;
+    font-weight: bold;
+    padding: 10px;
+  }
+
+  :focus {
+    /* Disable rendering blue border when a sub-component in grid is in focus */
+    outline: none;
+  }
+}
+
+.Multi-line {
+  white-space: 'pre-line';
+  overflow-wrap: 'break-word';
+}
